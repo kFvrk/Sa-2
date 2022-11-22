@@ -9,7 +9,7 @@ company.get('/', (req, res) => {
 
 company.post("/register", async (req, res) => {
     
-    const { name, type, description, address } = req.body;
+    const { name, cnpj, address } = req.body;
 
     const alreadyExistsCompany = await Company.findOne({ where: { name } }).catch(
         (err) => {
@@ -21,7 +21,7 @@ company.post("/register", async (req, res) => {
         return res.status(409).json({ message: "Company already registered!" });
     }
 
-    const newCompany = new Company({ name, type, description, address });
+    const newCompany = new Company({ name, cnpj, address });
     const savedCompany = await newCompany.save().catch((err) => {
         console.log("Error: ", err);
         res.status(500).json({ error: "Sorry! Could not register the company" });

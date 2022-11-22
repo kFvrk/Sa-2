@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "sa ",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "cross-env NODE_ENV=producao node server",
+    "dev": "cross-env NODE_ENV=desenvolvimento nodemon server"
   },
   "repository": {
     "type": "git",

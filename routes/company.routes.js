@@ -31,14 +31,14 @@ company.post("/register", async (req, res) => {
 });
 
 company.get('/find', async (req, res) => {
-    const companys = await Company.findAll().catch(
+    const companies = await Company.findAll().catch(
         (err) => {
             console.log(err)
         }
     );
 
-    if (company){
-        return res.json({companys})
+    if (companies){
+        return res.json({companies})
     } else {
         return null
     }

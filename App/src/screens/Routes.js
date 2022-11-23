@@ -39,7 +39,7 @@ const Routes = ({ navigation }) => {
                 component={CompanyRoutes}
                 options={{
                     tabBarIcon: () => (
-                        <Entypo name='company' size={30} />
+                        <Entypo name='suitcase' size={30} />
                     )
                 }}
             />

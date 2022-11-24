@@ -31,8 +31,8 @@ const CompanyModels = ({ navigation }) => {
                         <View style={styles.container}>
                             <View style={styles.text}>
                                 <Text style={styles.title}>{item.name}</Text>
-                                
-                                <Text style={styles.item}>Avaliado por: {item.user.name}</Text>
+                                <Text style={styles.title}>{"Idade modelo(a): " + item.age}</Text>
+                                <Text style={styles.title}>{"Email modelo(a): " + item.email}</Text>
                             </View>
                         </View>
                     )
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     title: {
-        fontSize: 30,
+        fontSize: 20,
         margin: 10,
         textAlign: 'center'
     },
@@ -79,18 +79,4 @@ const styles = StyleSheet.create({
     icon: {
         margin: 10
     },
-    myStarStyle: {
-        color: 'green',
-        backgroundColor: 'transparent',
-        textShadowColor: 'black',
-        textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
-        width: 50,
-        fontSize: 50
-    },
-    myEmptyStarStyle: {
-        color: 'gray',
-        width: 50,
-        fontSize: 50
-    }
-})
+});

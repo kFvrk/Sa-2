@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View, Image, useWindowDimensions, Text, TextInput } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Image, useWindowDimensions, Text, TextInput, ImageBackground } from "react-native";
 import React, { useState, useContext } from 'react';
 import Logo from '../../assets/images/Logo.png';
 import CustomInput from "../components/CustomInput";
@@ -30,7 +30,6 @@ const Login = ({ navigation }) => {
             setPassword('')
         }
     }
-
     const { height } = useWindowDimensions();
 
     return (
@@ -75,6 +74,7 @@ const styles = StyleSheet.create({
     view: {
         alignItems: 'center',
         padding: 20,
+
     },
     logo: {
         width: '70%',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     },
     createAccountText: {
         fontWeight: "bold",
-        color: "#6200ee",
+        color: "#9370DB",
     },
 });
 

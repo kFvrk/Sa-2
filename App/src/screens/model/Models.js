@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         margin: 5,
         padding: 10,
         borderRadius: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#F0F8FF',
         alignItems: 'center'
     },
     text: {
@@ -77,19 +77,5 @@ const styles = StyleSheet.create({
     },
     icon: {
         margin: 10
-    },
-    myStarStyle: {
-        color: 'green',
-        backgroundColor: 'transparent',
-        textShadowColor: 'black',
-        textShadowOffset: { width: 1, height: 1 },
-        textShadowRadius: 2,
-        width: 50,
-        fontSize: 50
-    },
-    myEmptyStarStyle: {
-        color: 'gray',
-        width: 50,
-        fontSize: 50
     }
 })

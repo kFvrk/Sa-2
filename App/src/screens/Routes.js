@@ -7,7 +7,6 @@ import { Context } from '../context/authContext'
 
 import Home from './Home'
 import CompanyRoutes from './company/CompanyRoutes'
-import Users from './Users'
 import ModelRoutes from './model/ModelRoutes'
 
 const Tab = createBottomTabNavigator();
@@ -58,20 +57,6 @@ const Routes = ({ navigation }) => {
                     ),
                 }}
             />
-            {state.isAdmin ? (
-                <Tab.Screen
-                    name="Users"
-                    component={Users}
-                    options={{
-                        tabBarIcon: () => (
-                            <Entypo name='user' size={30} />
-                        )
-                    }}
-                />
-            ) : (
-                <></>
-            )
-            }
 
         </Tab.Navigator>
     )

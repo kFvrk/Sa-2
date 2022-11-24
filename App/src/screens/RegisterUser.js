@@ -74,7 +74,7 @@ const RegisterUser = ({ navigation }) => {
             <TouchableOpacity
                 onPress={() => navigation.navigate("Login")}
             >
-                <Text>
+                <Text >
                     Já tem uma conta?{" "}
                     <Text style={styles.loginText}>Faça o login</Text>
                 </Text>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     },
     loginText: {
         fontWeight: "bold",
-        color: "#6200ee",
+        color: "#9370DB",
     },
     picker: {
         marginVertical: 5,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         height: 45,
         width: '100%'
-    }
+    },
 });
 
 export default RegisterUser;

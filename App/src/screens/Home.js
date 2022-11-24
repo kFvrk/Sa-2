@@ -9,8 +9,9 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <CustomButton text="Companies" onPress={() => navigation.navigate("Companies")} />
-      <CustomButton text="Users" onPress={() => navigation.navigate("Users")} />
+      <Text style={styles.text}>{"...Bem vindo a StyleModel..."}</Text>
+      <Text style={styles.textMiddle}>{ "Somos uma empresa que gerencia e facilita o contato entre você e empresas qualificadas para que seja mais fácil o seu objetivo e ir até em busca do seus sonhos!"}</Text>
+      <Text style={styles.textCopy}>{"StyleModel © 2022"}</Text>
     </View>
   )
 }
@@ -19,12 +20,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent:'space-around'
+    justifyContent:'space-around',
     
   },
   text: {
     fontSize: 30,
-    margin: 40
+    margin: 40,
+    textAlign: 'center'
+  },
+  textMiddle: {
+    fontSize: 25,
+    margin: 50,
+    textAlign: 'center'
+  },
+  textCopy: {
+    fontSize: 13,
+    margin: 10,
+    textAlign: 'center'
   }
 })
 

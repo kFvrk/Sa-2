@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         justifyContent: "center",
+
     },
     container: {
         flexDirection: "row",

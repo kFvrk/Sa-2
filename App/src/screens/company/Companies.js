@@ -50,7 +50,7 @@ const Companies = ({ navigation }) => {
                             <Entypo
                                 name="squared-plus"
                                 size={60}
-                                color="green"
+                                color="#6959CD"
                                 style={styles.icon}
                                 onPress={() => newModel(item)}
                             />
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         margin: 5,
         padding: 10,
         borderRadius: 10,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#F0F8FF',
         alignItems: 'center'
     },
     text: {

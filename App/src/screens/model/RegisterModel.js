@@ -1,33 +1,39 @@
 import { StyleSheet, View, Image, useWindowDimensions } from "react-native";
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import api from '../../api'
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
-import api from '../../api'
-import { Context } from '../../context/authContext'
+import { Context } from "../../context/authContext";
+import { Entypo } from "@expo/vector-icons";
 
-const RegisterCompany = ({ navigation }) => {
+const RegisterModel = ({ navigation }) => {
 
     const { state, dispatch } = useContext(Context);
 
+    const [idUser, setidUser] = useState(state.idUser);
+    const [idCompany, setidCompany] = useState(state.idCompany);
     const [name, setName] = useState('');
-    const [cnpj, setCnpj] = useState('');
-    const [address, setAddress] = useState('');
+    const [age, setAge] = useState('');
+    const [email, setEmail] = useState('');
+ 
 
     const { height } = useWindowDimensions();
 
     const onRegisterPressed = async () => {
         try {
-            const authData = await api.post("/company/register", {
+            const authData = await api.post("/model/register", {
+                idUser: idUser,
+                idCompany: idCompany,
                 name: name,
-                cnpj: cnpj,
-                address: address
+                age: age,
+                email: email
             });
             if (authData.status === 200) {
                 alert(authData.data.message)
                 setName("")
-                setCnpj("")
-                setAddress("")
+                setAge("")
+                setEmail("")
                 dispatch({type: "update", payload: true})
             }
             else {
@@ -48,22 +54,28 @@ const RegisterCompany = ({ navigation }) => {
             />
 
             <CustomInput
-                placeholder="Company Name"
+                value={state.nameCompany}
+                editable={false}
+            />
+
+            <CustomInput
+                placeholder="Name"
                 value={name}
                 setValue={setName}
             />
 
             <CustomInput
-                placeholder="cnpj"
-                value={cnpj}
-                setValue={setCnpj}
+                placeholder="Age"
+                value={age}
+                setValue={setAge}
+            />
+       
+            <CustomInput
+                placeholder="Email"
+                value={email}
+                setValue={setEmail}
             />
 
-            <CustomInput
-                placeholder="Address"
-                value={address}
-                setValue={setAddress}
-            />
 
             <CustomButton text="Register" onPress={onRegisterPressed} />
         </View>
@@ -83,19 +95,7 @@ const styles = StyleSheet.create({
     loginText: {
         fontWeight: "bold",
         color: "#6200ee",
-    },
-    picker: {
-        marginVertical: 5,
-        borderRadius: 5,
-        backgroundColor: 'lightgray',
-        textAlignVertical: 'center',
-        textAlign: 'center',
-        fontSize: '14px',
-        fontWeight: 'bold',
-        borderWidth: 0,
-        height: 45,
-        width: '100%'
     }
 });
 
-export default RegisterCompany;
+export default RegisterModel;

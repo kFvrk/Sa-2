@@ -8,6 +8,7 @@ import { Context } from '../context/authContext'
 import Home from './Home'
 import CompanyRoutes from './company/CompanyRoutes'
 import Users from './Users'
+import ModelRoutes from './model/ModelRoutes'
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,7 @@ const Routes = ({ navigation }) => {
                     ),
                 }}
             />
+             {state.isAdmin ? (
             <Tab.Screen
                 name="Companies"
                 component={CompanyRoutes}
@@ -41,6 +43,19 @@ const Routes = ({ navigation }) => {
                     tabBarIcon: () => (
                         <Entypo name='suitcase' size={30} />
                     )
+                }}
+            />
+            ) : (
+                <></>
+            )
+            }
+            <Tab.Screen
+                name="Models"
+                component={ModelRoutes}
+                options={{
+                    tabBarIcon: () => (
+                        <Entypo name='users' size={30} />
+                    ),
                 }}
             />
             {state.isAdmin ? (
@@ -62,6 +77,6 @@ const Routes = ({ navigation }) => {
     )
 }
 
-export default Routes
+export default Routes;
 
 const styles = StyleSheet.create({})

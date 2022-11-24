@@ -20,14 +20,14 @@ const Companies = ({ navigation }) => {
     }, [state.update]
     )
 
-    const seeReview = async (item) => {
+    const seeModel = async (item) => {
         await dispatch({type: 'setCompany', payload: item});
-        navigation.navigate('CompanyReviews');
+        navigation.navigate('CompanyModels');
     }
 
-    const newReview = async (item) => {
+    const newModel = async (item) => {
         await dispatch({type: 'setCompany', payload: item});
-        navigation.navigate('Company')
+        navigation.navigate('RegisterModel')
     }
 
     return (
@@ -42,7 +42,7 @@ const Companies = ({ navigation }) => {
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.container}>
-                            <TouchableOpacity style={styles.text} onPress={() => seeReview(item)}>
+                            <TouchableOpacity style={styles.text} onPress={() => seeModel(item)}>
                                     <Text style={styles.title}>{item.name}</Text>
                                     <Text style={styles.item}>{item.cnpj}</Text>
                                     <Text style={styles.item}>{item.address}</Text>
@@ -52,7 +52,7 @@ const Companies = ({ navigation }) => {
                                 size={60}
                                 color="green"
                                 style={styles.icon}
-                                onPress={() => newReview(item)}
+                                onPress={() => newModel(item)}
                             />
                         </View>
                     )

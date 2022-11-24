@@ -9,7 +9,6 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Olá, {state.name}</Text>
       <CustomButton text="Companies" onPress={() => navigation.navigate("Companies")} />
       <CustomButton text="Users" onPress={() => navigation.navigate("Users")} />
     </View>
